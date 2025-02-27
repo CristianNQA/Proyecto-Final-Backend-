@@ -10,10 +10,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: ENVIRONMENT.URL_FRONTED,
+    origin: ENVIRONMENT.URL_FRONTEND, 
     credentials: true,
   })
 );
+console.log("Orígenes permitidos:", ENVIRONMENT.URL_FRONTEND);
+
 
 
 app.use(express.json()); 
@@ -25,4 +27,6 @@ const PORT = ENVIRONMENT.PORT;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 }); 
+
+
 
